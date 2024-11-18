@@ -4,6 +4,7 @@ const corsConfig = require('./config/cors');
 const imageRoutes = require('./routes/imageRoutes');
 const proxyRoutes = require('./routes/proxyRoutes');
 const errorHandler = require('./middleware/errorHandler');
+const deepaiRoutes = require('./routes/deepaiRoutes');
 
 const app = express();
 const port = 5002;
@@ -23,7 +24,8 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 app.use('/api', imageRoutes);
 app.use('/api', proxyRoutes);
-app.use(errorHandler);
+
+app.use('/api', deepaiRoutes);app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
