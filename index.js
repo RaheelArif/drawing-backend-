@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const corsConfig = require('./config/cors');
 const imageRoutes = require('./routes/imageRoutes');
-const proxyRoutes = require('./routes/proxyRoutes');
+
 const errorHandler = require('./middleware/errorHandler');
 const deepaiRoutes = require('./routes/deepaiRoutes');
 
@@ -23,7 +23,7 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 app.use('/api', imageRoutes);
-app.use('/api', proxyRoutes);
+
 
 app.use('/api', deepaiRoutes);app.use(errorHandler);
 

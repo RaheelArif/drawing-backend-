@@ -2,7 +2,7 @@ const axios = require('axios');
 const FormData = require('form-data');
 const { API_KEY } = require('../config/deepai');
 
-const DEFAULT_STYLE = '  centered composition, seamless background,';
+const DEFAULT_STYLE = '   seamless background,';
 
 async function generate3DCartoon(text) {
     try {
