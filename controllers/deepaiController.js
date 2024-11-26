@@ -1,5 +1,5 @@
 // controllers/deepaiController.js
-const { generateWithRetry } = require('../utils/imageGenerator');
+const { generate3DRender } = require('../utils/imageGenerator');
 
 const textTo3DCartoon = async (req, res) => {
     try {
@@ -12,7 +12,7 @@ const textTo3DCartoon = async (req, res) => {
             });
         }
 
-        const result = await generateWithRetry(text);
+        const result = await generate3DRender(text);
 
         if (!result.output_url) {
             throw new Error('Failed to generate image URL');
